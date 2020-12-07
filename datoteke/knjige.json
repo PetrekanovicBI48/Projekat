@@ -1,0 +1,18 @@
+[{"sifra": 1,
+    "naslov": "Knjiga 1",
+    "autor": "Pera Peric",
+    "isbn": "1312312312312",
+    "izdavac": "Vulkan",
+    "godina": 2020,
+    "cena": 650.00,
+    "kategorija": "Roman"
+  },
+  {"sifra": 2,
+    "naslov": "Knjiga 2",
+    "autor": "Marko Markovic",
+    "isbn": "13123123332325",
+    "izdavac": "Vulkan",
+    "godina": 2019,
+    "cena": 750.00,
+    "kategorija": "Roman"
+  }]
