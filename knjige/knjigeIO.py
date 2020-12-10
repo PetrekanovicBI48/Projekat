@@ -9,5 +9,5 @@ def sacuvaj_knjige(knjige):
 
 
 def ucitaj_knjige():
-    with open(datoteka, "r") as f:
+    with open(datoteka) as f:
         return json.load(f)

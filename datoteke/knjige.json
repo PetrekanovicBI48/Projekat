@@ -3,6 +3,7 @@
     "autor": "Pera Peric",
     "isbn": "1312312312312",
     "izdavac": "Vulkan",
+  "broj strana":"231",
     "godina": 2020,
     "cena": 650.00,
     "kategorija": "Roman"
@@ -12,7 +13,43 @@
     "autor": "Marko Markovic",
     "isbn": "13123123332325",
     "izdavac": "Vulkan",
+    "broj strana":"323",
     "godina": 2019,
     "cena": 750.00,
     "kategorija": "Roman"
+  },
+  {"sifra": 350497,
+    "naslov": "Medvedgrad",
+    "autor": "Fredrik Bakman",
+    "isbn": "9788652139743",
+    "izdavac": "laguna",
+    "broj strana":"213",
+    "godina": 2020,
+    "cena":899.10,
+    "kategorija": "Roman"
+
+  },
+  {
+  "sifra": 794053,
+    "naslov": "Put revolucije",
+    "autor": "Richard Jejts",
+    "isbn": "3479312568879",
+    "izdavac": "Mali vrt",
+    "broj strana":"123",
+    "godina": 2020,
+    "cena":1210.00,
+    "kategorija": "Roman"
+  },
+  {
+    "sifra": 350497,
+    "naslov": "Medvedgrad",
+    "autor": "Fredrik Bakman",
+    "isbn": "9788652139743",
+    "izdavac": "laguna",
+    "broj strana": "323",
+    "godina": 2020,
+    "cena":899.10,
+    "kategorija": "Roman"
+
   }]
+

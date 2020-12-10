@@ -1,4 +1,3 @@
-  
 import json
 
 datoteka = './datoteke/korisnici.json'
@@ -10,5 +9,5 @@ def sacuvaj_korisnike(korisnici):
 
 
 def ucitaj_korisnike():
-    with open(datoteka, "r") as f:
+    with open(datoteka) as f:
         return json.load(f)
