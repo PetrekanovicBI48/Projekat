@@ -9,5 +9,5 @@ def sacuvaj_korisnike(korisnici):
 
 
 def ucitaj_korisnike():
-    with open(datoteka) as f:
+    with open(datoteka,"r") as f:
         return json.load(f)

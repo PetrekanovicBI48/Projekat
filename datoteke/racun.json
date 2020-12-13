@@ -1,0 +1,11 @@
+[{
+  "sifra": 1,
+  "prodavac": "",
+  "datum_vreme": "",
+  "artikli": [{
+    "sifra": "",
+    "kolicina": "",
+    "cena": ""
+  }],
+  "Ukupna_suma": ""
+}]
