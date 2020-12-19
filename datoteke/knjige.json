@@ -1,4 +1,4 @@
-[{"sifra": 1,
+[{"sifra": 3,
     "naslov": "Knjiga 1",
     "autor": "Pera Peric",
     "isbn": "1312312312312",
@@ -8,7 +8,7 @@
     "cena": 650.00,
     "kategorija": "Roman"
   },
-  {"sifra": 2,
+  {"sifra": 1,
     "naslov": "Knjiga 2",
     "autor": "Marko Markovic",
     "isbn": "13123123332325",
@@ -18,7 +18,7 @@
     "cena": 750.00,
     "kategorija": "Roman"
   },
-  {"sifra": 350497,
+  {"sifra": 2,
     "naslov": "Medvedgrad",
     "autor": "Fredrik Bakman",
     "isbn": "9788652139743",
@@ -39,17 +39,6 @@
     "godina": 2020,
     "cena":1210.00,
     "kategorija": "Roman"
-  },
-  {
-    "sifra": 350497,
-    "naslov": "Medvedgrad",
-    "autor": "Fredrik Bakman",
-    "isbn": "9788652139743",
-    "izdavac": "laguna",
-    "broj strana": "323",
-    "godina": 2020,
-    "cena":899.10,
-    "kategorija": "Roman"
-
-  }]
+  }
+]
 

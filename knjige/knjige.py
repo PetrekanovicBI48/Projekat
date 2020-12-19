@@ -1,6 +1,7 @@
 from knjige.knjigeIO import ucitaj_knjige, sacuvaj_knjige
 import re
 
+
 knjige = ucitaj_knjige()
 i = 0
 z = len(knjige)
@@ -47,7 +48,7 @@ def prikaz_liste(knjige):
     print('Broj strana', end="\n")
     for knjiga in knjige:
         print(knjiga['Sifra'], end="")
-        for i in range(duzina[0]+3-len(str(knjiga['id']))):
+        for i in range(duzina[0]+3-len(str(knjiga['sifra']))):
             print(' ',end="")
         print(knjiga['naslov'], end="")
         for i in range(duzina[1]+6-len(str(knjiga['naslov']))):
@@ -58,8 +59,8 @@ def prikaz_liste(knjige):
         print(knjiga['isbn'], end="")
         for i in range(duzina[3]+5-len(str(knjiga['isbn']))):
             print(' ',end="")
-        print(knjiga['publisher'], end="")
-        for i in range(duzina[4]+10-len(str(knjiga['publisher']))):
+        print(knjiga['izdavac'], end="")
+        for i in range(duzina[4]+10-len(str(knjiga['izdavac']))):
             print(' ',end="")
         print(knjiga['godina'], end="")
         for i in range(duzina[5]+5-len(str(knjiga['godina']))):
@@ -70,7 +71,7 @@ def prikaz_liste(knjige):
         print(knjiga['kategorija'], end="")
         for i in range(duzina[7]+6-len(str(knjiga['kategorija']))):
             print(' ',end="")
-        print(knjiga['broj stranica'], end="\n")
+        print(knjiga['broj strana'], end="\n")
         i+=1
 
 
@@ -176,28 +177,54 @@ def sortirane_knjige():
     print("0. Izlaz")
 
     stavka = int(input("Izaberite stavku: "))
-    knjige = []
+    knjige = ucitaj_knjige()
     if stavka == 1:
-        knjige = sortiraj_knjige("sifra:")
+        knjige = sortiraj_knjige("sifra")
 
     elif stavka == 2:
-        knjige = sortiraj_knjige("naslov:")
+        knjige = sortiraj_knjige("naslov")
 
     elif stavka == 3:
-        knjige = sortiraj_knjige("kategorija:")
+        knjige = sortiraj_knjige("kategorija")
 
     elif stavka == 4:
-        knjige = sortiraj_knjige("autor:")
+        knjige = sortiraj_knjige("autor")
 
     elif stavka == 5:
-        knjige = sortiraj_knjige("izdavac:")
+        knjige = sortiraj_knjige("izdavac")
 
     elif stavka == 6:
-        knjige = sortiraj_knjige("cena:")
+        knjige = sortiraj_knjige("cena")
 
     elif stavka == 0:
         return
     else:
         print("Pogresan unos!")
+
+    ispisi_knjige(knjige)
+
+def ispisi_knjige(knjige):
+    zaglavlje = f"{'sifra':<10}" \
+               f"{'naslov':<20}" \
+               f"{'autor':<20}" \
+               f"{'isbn':^20}" \
+               f"{'izdavac':^20}" \
+               f"{'godina izdanja':^20}" \
+               f"{'broj strana':^20}" \
+               f"{'cena':^20}" \
+               f"{'kategorija':^20}"
+
+    print(zaglavlje)
+    print("-"*len(zaglavlje))
+
     for knjiga in knjige:
-        print(knjiga)
+        za_ispis = f"{knjiga['sifra']:<10}" \
+                   f"{knjiga['naslov']:<20}" \
+                   f"{knjiga['autor']:<20}" \
+                   f"{knjiga['isbn']:^20}" \
+                   f"{knjiga['izdavac']:^20}" \
+                   f"{knjiga['godina']:^20}" \
+                   f"{knjiga['broj strana']:^20}" \
+                   f"{knjiga['cena']:^20}" \
+                   f"{knjiga['kategorija']:^20}"
+        print(za_ispis)
