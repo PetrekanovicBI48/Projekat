@@ -1,4 +1,4 @@
-from korisnici.korisnici import prijava,sortiranje_korisnika , menadzer_registracija, admin_registracija, prikaz_liste
+from korisnici.korisnici import prijava,sort , menadzer_registracija, admin_registracija, prikaz_liste
 from knjige.knjige import sortirane_knjige, pretrazi_knjige
 from akcije.akcije import ispis_akcija,ucitaj_akcije
 
@@ -28,7 +28,7 @@ def meni_administrator():
         elif stavka == 5:
             admin_registracija()
         elif stavka == 6:
-            sortiranje_korisnika()
+            sort()
         elif stavka == 7:
             print("Nemate dozvolu za ovu komandu")
             meni_menadzer()
