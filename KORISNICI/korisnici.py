@@ -119,14 +119,19 @@ def lista1(korisnici):
 def admin_registracija():
     while True:
         korisnicko_ime = input("\nKorisnicko ime(upisite 'nazad' kako bi ste napustili registraciju):")
-        greska = re.search(' ', korisnicko_ime)
-        if greska is not None:
-            print("Ime ne sme da sadrzi razmake!")
-            continue
-        if korisnicko_ime == '':
-            print("Morate uneti ime!")
-        break
-
+        if korisnicko_ime !='':
+            greska = re.search(' ', korisnicko_ime)
+            if greska == None:
+                break
+            else:
+                print("korisnicko ime ne sme da sadrzi razmake,pokusajte opet!")
+                if admin_registracija()== False:
+                    return False
+        else:
+            print("niste uneli korisnicko ime!")
+            if admin_registracija()==False:
+                return False
+    print("test")
     for korisnik in korisnici:
         if korisnik['korisnicko_ime'] == korisnicko_ime:
             print("Korisnicko ime je vec zauzeto.Pokusajte drugo")
@@ -134,16 +139,21 @@ def admin_registracija():
                 return False
         if korisnicko_ime == 'nazad':
             return False
+    print("test")
     while True:
-        lozinka = getpass.getpass('lozinka')
-        greska = re.search(' ', lozinka)
-        if greska != None:
-            print("lozinka ne sme da sadrzi razmak!")
-            continue
-        if lozinka == '':
-            print("Niste uneli lozinku")
-            continue
-        break
+        lozinka = input("unesite lozinku")
+        if lozinka != '':
+            greska = re.search(' ', korisnicko_ime)
+            if greska == None:
+                break
+            else:
+                print("Sifra ne sme da sadrzi razmake,pokusajte opet!")
+                if admin_registracija() == False:
+                    return False
+        else:
+            print("niste uneli sifru!")
+            if admin_registracija() == False:
+                return False
     ime = input("ime:")
     prezime = input("prezime:")
 
@@ -170,11 +180,11 @@ def admin_registracija():
         novi_korsinik['tip_korisnika'] = 'Prodavac'
     print("\n Korisnik se dodaje:")
     novi_korsinik = [novi_korsinik]
-    lista1(novi_korsinik)
+    ispis_korisnika(novi_korsinik)
     while True:
         print("\nNastavite?"
-              "1. Da"
-              "2. Ne")
+              "\n1. Da"
+              "\n2. Ne")
         stavka = input("Opcija:")
         if stavka == 1:
             korisnici.append(novi_korsinik)
@@ -185,39 +195,48 @@ def admin_registracija():
             print("pogresan unos")
 
     sacuvaj_korisnike(korisnici)
-    print("%s je dodat u korisnike bazu podaatka.Tip korisnika=[%s]" % (
-    novi_korsinik['korisnicko_ime'], novi_korsinik['tip_korisnika']))
+    print("%s je dodat u korisnike bazu podaatka.Tip korisnika=[%s]" % (novi_korsinik['korisnicko_ime'], novi_korsinik['tip_korisnika']))
     return False
 
 
 def menadzer_registracija():
     while True:
         korisnicko_ime = input("\nKorisnicko ime(upisite 'nazad' kako bi ste napustili registraciju):")
-        greska = re.search(' ', korisnicko_ime)
-        if greska is not None:
-            print("Ime ne sme da sadrzi razmake!")
-            continue
-        if korisnicko_ime == '':
+        if korisnicko_ime != '':
+            greska = re.search(' ', korisnicko_ime)
+            if greska== None:
+                break
+            else:
+                print("Ime ne sme da sadrzi razmake!")
+                if menadzer_registracija()==False:
+                    return False
+        else:
             print("Morate uneti ime!")
-        break
+            if menadzer_registracija()==False:
+                return False
 
     for korisnik in korisnici:
          if korisnik['korisnicko_ime'] == korisnicko_ime:
-            print("Korisnicko ime je vec zauzeto.Pokusajte drugo")
+            print("Korisnicko ime je vec zauzeto. Pokusajte drugo!")
             if not menadzer_registracija():
                 return False
-        if korisnicko_ime == 'nazad':
+         if korisnicko_ime == 'nazad':
             return False
     while True:
-        lozinka = getpass.getpass('lozinka:')
-        greska = re.search(' ', lozinka)
-        if greska != None:
-            print("lozinka ne sme da sadrzi razmak!")
-            continue
-        if lozinka == '':
-            print("Niste uneli lozinku")
-            continue
-        break
+        lozinka = input('lozinka:')
+        if korisnicko_ime != '':
+            greska = re.search(' ', korisnicko_ime)
+            if greska== None:
+                break
+            else:
+                print("sifra ne sme da sadrzi razmake!")
+                if menadzer_registracija()==False:
+                    return False
+        else:
+            print("Morate uneti sifru!")
+            if menadzer_registracija()==False:
+                return False
+
     ime = input("ime:")
     prezime = input("prezime:")
 
@@ -232,20 +251,7 @@ def menadzer_registracija():
     novi_korsinik['prezime']: prezime
     novi_korsinik['tip_korisnika']: 'Prodavac'
     novi_korsinik = [novi_korsinik]
-    lista1(novi_korsinik)
-    while True:
-        print("\nNastavite?"
-              "1. Da"
-              "2. Ne")
-        stavka = input("Opcija:")
-        if stavka == 1:
-            korisnici.append(novi_korsinik)
-            break
-        elif stavka == 2:
-            return False
-        else:
-            print("pogresan unos")
-
+    ispis_korisnika(novi_korsinik)
     sacuvaj_korisnike(korisnici)
     print("%s je dodat u korisnike bazu podaatka.Tip korisnika=[%s]" % (novi_korsinik['korisnicko_ime'], novi_korsinik['tip_korisnika']))
     return False
