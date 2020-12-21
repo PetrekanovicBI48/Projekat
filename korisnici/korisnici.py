@@ -91,9 +91,7 @@ def registracija():
 
     while True:
         tip_korisnika = input("Pristup menadzera ili prodavca(m/p):")
-        if tip_korisnika == 'm':
-            break
-        elif tip_korisnika == 'p':
+        if tip_korisnika == 'm' or tip_korisnika == 'p':
             break
         else:
             print("Pogresan tip korisnika! Pokusajte ponovo!")
