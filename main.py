@@ -1,4 +1,4 @@
-from korisnici.korisnici import prijava, sort, menadzer_registracija, admin_registracija
+from korisnici.korisnici import prijava, sort, registracija
 from knjige.knjige import sortirane_knjige, pretrazi_knjige,brisanje_knjige, registracija_knjiga,izmena_knjiga
 from akcije.akcije import ispis_akcija,ucitaj_akcije,registracija_akcija,pretrazi_akcija
 
@@ -26,7 +26,7 @@ def meni_administrator():
         elif stavka == 4:
             pretrazi_akcija()
         elif stavka == 5:
-            admin_registracija()
+            registracija()
         elif stavka == 6:
             sort()
         elif stavka == 7:
@@ -65,7 +65,7 @@ def meni_menadzer():
         elif stavka == 4:
             registracija_akcija()
         elif stavka == 5:
-            menadzer_registracija()
+            registracija()
         elif stavka == 6:
             sort()
         elif stavka == 7:
