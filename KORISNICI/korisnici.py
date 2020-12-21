@@ -17,19 +17,8 @@ def prijava():
             return korisnik
     return None
 
-
 duzina = [1, 1, 1, 1, 1]
 kljuc = ['korisnicko_ime', 'lozinka', 'ime', 'prezime', 'tip_korisnika']
-
-
-def duzina_liste():
-    max = '1'
-    for i in range(5):
-        max = len(str(korisnici[0][kljuc[i]]))
-        for j in range(n - 1):
-            if max < len(str(korisnici[j + 1][kljuc[i]])):
-                max < len(str(korisnici[j + 1][kljuc[i]]))
-            duzina[i] = max
 
 def sort():
     while True:
@@ -79,41 +68,6 @@ def ispis_korisnika(korisnici):
                    f"{korisnik['prezime']:<20}" \
                    f"{korisnik['tip_korisnika']:<20}"
         print(za_ispis)
-
-
-def lista1(korisnici):
-    duzina_liste()
-    print('\nkorisnicko_ime', end="")
-    for i in range(duzina[0] + 1):
-        print(' ', end="")
-    print('lozinka', end="")
-    for i in range(duzina[1] + 1):
-        print(' ', end="")
-    print('ime', end="")
-    for i in range(duzina[2] + 1):
-        print(' ', end="")
-    print('prezime', end="")
-    for i in range(duzina[3] + 1):
-        print(' ', end="")
-    print('tip_korisnika', end="")
-    for i in range(duzina[4] + 1):
-        print(' ', end="")
-    print('\n')
-    for korisnik in korisnici:
-        print(korisnik['korisnicko_ime'], end="")
-        for i in range(duzina[0] + 9 - len(str(korisnik['korisnicko_ime']))):
-            print(' ', end="")
-        print(korisnik['lozinka'], end="")
-        for i in range(duzina[1] + 9 - len(str(korisnik['lozinka']))):
-            print(' ', end="")
-        print(korisnik['ime'], end="")
-        for i in range(duzina[2] + 5 - len(str(korisnik['ime']))):
-            print(' ', end="")
-        print(korisnik['prezime'], end="")
-        for i in range(duzina[3] + 9 - len(str(korisnik['prezime']))):
-            print(' ', end="")
-        print(korisnik['tip_korisnika'], end="\n")
-        i += 1
 
 
 def admin_registracija():

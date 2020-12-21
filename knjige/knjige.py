@@ -7,7 +7,6 @@ def dozvola(dozvole):
     tip_korisnika=dozvole
 
 knjige = ucitaj_knjige()
-z=-1
 i = 0
 z = len(knjige)
 
@@ -23,61 +22,6 @@ def duzina_liste2():
             if (max < len(str(knjige[i + 1][kljuc[i]]))):
                 max = len(str(knjige[j + 1][kljuc[i]]))
         duzina[i] = max
-
-def prikaz_liste(knjige):
-    duzina_liste2()
-    print('\nSifra', end="")
-    for i in range(duzina[0]+1):
-        print(' ', end="")
-    print('Naslov', end="")
-    for i in range(duzina[1]+1):
-        print(' ', end="")
-    print('Author', end="")
-    for i in range(duzina[2]+1):
-        print(' ', end="")
-    print('isbn', end="")
-    for i in range(duzina[3]+1):
-        print(' ', end="")
-    print('Izdavac', end="")
-    for i in range(duzina[4]+1):
-        print(' ', end="")
-    print('godina', end="")
-    for i in range(duzina[5]+1):
-        print(' ', end="")
-    print('cena', end="")
-    for i in range(duzina[6]+1):
-        print(' ', end="")
-    print('kategorija', end="")
-    for i in range(duzina[7]+1):
-        print(' ', end="")
-    print('Broj strana', end="\n")
-    for knjiga in knjige:
-        print(knjiga['Sifra'], end="")
-        for i in range(duzina[0]+3-len(str(knjiga['sifra']))):
-            print(' ',end="")
-        print(knjiga['naslov'], end="")
-        for i in range(duzina[1]+6-len(str(knjiga['naslov']))):
-            print(' ',end="")
-        print(knjiga['autor'], end="")
-        for i in range(duzina[2]+7-len(str(knjiga['autor']))):
-            print(' ',end="")
-        print(knjiga['isbn'], end="")
-        for i in range(duzina[3]+5-len(str(knjiga['isbn']))):
-            print(' ',end="")
-        print(knjiga['izdavac'], end="")
-        for i in range(duzina[4]+10-len(str(knjiga['izdavac']))):
-            print(' ',end="")
-        print(knjiga['godina'], end="")
-        for i in range(duzina[5]+5-len(str(knjiga['godina']))):
-            print(' ',end="")
-        print(knjiga['cena'], end="")
-        for i in range(duzina[6]+6-len(str(knjiga['cena']))):
-            print(' ',end="")
-        print(knjiga['kategorija'], end="")
-        for i in range(duzina[7]+6-len(str(knjiga['kategorija']))):
-            print(' ',end="")
-        print(knjiga['broj strana'], end="\n")
-        i+=1
 
 
 def get_naslov(knjige):
@@ -385,9 +329,11 @@ def izmena_knjiga():
     sacuvaj_knjige(knjige)
     print('%s je dodata u bazu podataka. Knjiga sifra=[%s]' %(nova_knjiga['naslov'], nova_knjiga['sifra']))
     return False
+
+
 def brisanje_knjige():
-    z=-1
-    i=0
+    z = -1
+    i = 0
     while True:
         sifra=input("\nSifra **'nazad za povratak'**:")
         if sifra=='nazad':
@@ -403,6 +349,7 @@ def brisanje_knjige():
     for knjiga in knjige:
         if knjiga['sifra']==sifra:
             print("Knjiga je pronadjenja")
+            z=i
             break
             i+=1
         if z==-1:
