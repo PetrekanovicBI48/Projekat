@@ -3,12 +3,6 @@
   "artikli": [{
     "sifra": "324324",
     "naslov": "He calls",
-    "cena": "30000"
-  },
-    {
-    "sifra": "21412",
-    "naslov": "She belong to the streets",
-    "cena": "1111"
-  }],
+    "cena": "30000"}],
   "datum_vazenja": "2050-12-12"
 }]

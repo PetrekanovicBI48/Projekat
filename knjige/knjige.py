@@ -181,19 +181,7 @@ def ispisi_knjige(knjige):
 
 def registracija_knjiga():
     while True:
-        sifra=input("\n Sifra **za povratak upisite nazad**:")
-        if sifra !='':
-            greska= re.search(' ',sifra)
-            if greska == None:
-                break
-            else:
-                print("sifra ne moze sadrzati razmake,pokusajte ponovo...")
-                if registracija_knjiga()==False:
-                    return False
-        else:
-            print("Niste uneli sifru!")
-            if registracija_knjiga()==False:
-                return False
+        sifra=int(input("\n Sifra **za povratak upisite nazad**:"))
     for knjiga in knjige:
         if knjiga['sifra']==sifra:
             print("Knjiga sa istiom sifrom vec postoji,pokusajte ponovo!")
@@ -338,7 +326,7 @@ def brisanje_knjige():
         sifra=input("\nSifra **'nazad za povratak'**:")
         if sifra=='nazad':
             return False
-        elif sifra is not '':
+        elif sifra != '':
             greska=re.search(' ',sifra)
             if greska== None:
                 break

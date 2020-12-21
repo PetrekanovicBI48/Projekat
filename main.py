@@ -1,6 +1,7 @@
 from korisnici.korisnici import prijava, sort, menadzer_registracija, admin_registracija
 from knjige.knjige import sortirane_knjige, pretrazi_knjige,brisanje_knjige, registracija_knjiga,izmena_knjiga
-from akcije.akcije import ispis_akcija,ucitaj_akcije,registracija_akcija
+from akcije.akcije import ispis_akcija,ucitaj_akcije,registracija_akcija,pretrazi_akcija
+
 
 def meni_administrator():
     while True:
@@ -23,8 +24,7 @@ def meni_administrator():
         elif stavka == 3:
             ispis_akcija(akcije=ucitaj_akcije())
         elif stavka == 4:
-            print("Nemate dozvolu za ovu komandu")
-            meni_administrator()
+            pretrazi_akcija()
         elif stavka == 5:
             admin_registracija()
         elif stavka == 6:
@@ -101,8 +101,7 @@ def meni_prodavac():
             print("Nemate dozvolu za ovu komandu")
             meni_prodavac()
         elif stavka == 4:
-            print("Nemate dozvolu za ovu komandu")
-            meni_prodavac()
+            pretrazi_akcija()
         elif stavka == 5:
             print("Nemate dozvolu za ovu komandu")
             meni_prodavac()

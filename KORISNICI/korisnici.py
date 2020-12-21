@@ -1,6 +1,5 @@
 import getpass
 import re
-
 from korisnici.korisniciIO import ucitaj_korisnike, sacuvaj_korisnike
 
 korisnici = ucitaj_korisnike()
@@ -86,6 +85,7 @@ def admin_registracija():
             if admin_registracija()==False:
                 return False
     print("test")
+    
     for korisnik in korisnici:
         if korisnik['korisnicko_ime'] == korisnicko_ime:
             print("Korisnicko ime je vec zauzeto.Pokusajte drugo")
@@ -134,20 +134,8 @@ def admin_registracija():
         novi_korsinik['tip_korisnika'] = 'Prodavac'
     print("\n Korisnik se dodaje:")
     novi_korsinik = [novi_korsinik]
-    ispis_korisnika(novi_korsinik)
-    while True:
-        print("\nNastavite?"
-              "\n1. Da"
-              "\n2. Ne")
-        stavka = input("Opcija:")
-        if stavka == 1:
-            korisnici.append(novi_korsinik)
-            break
-        elif stavka == 2:
-            return False
-        else:
-            print("pogresan unos")
 
+    ispis_korisnika(novi_korsinik)
     sacuvaj_korisnike(korisnici)
     print("%s je dodat u korisnike bazu podaatka.Tip korisnika=[%s]" % (novi_korsinik['korisnicko_ime'], novi_korsinik['tip_korisnika']))
     return False
