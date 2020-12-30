@@ -1,5 +1,7 @@
 from akcije.akcijeIO import ucitaj_akcije
 from knjige.knjige import ucitaj_knjige, sacuvaj_knjige
+from beautifultable import BeautifulTable
+from datetime import date
 
 akcije = ucitaj_akcije()
 n = len(akcije)
@@ -7,7 +9,40 @@ knjige = ucitaj_knjige()
 
 kljuc = ['sifra', 'autor', 'kategorija', 'cena']
 
+def ispis_artikla(akcije):
+    unos=''
+    i=0
+    for artikal in akcije['artikli']:
+        unos+=artikal['naslov']
+        try:
+            if akcije['artikli'][i+1]!= None:
+                unos+='\n'
+        except IndexError:
+            break
+        i +=1
+    return unos
 
+def ispis_cena(akcije):
+    unos=''
+    i=0
+    for artikal in akcije['artikli']:
+        unos+=artikal['cena']
+        try:
+            if akcije['artikli'][i+1]!= None:
+                unos+='\n'
+        except IndexError:
+            break
+        i+=1
+    return unos
+
+
+def table_create(akcije,show_valid):
+    tabela= BeautifulTable()
+    for akcija in akcije:
+        if akcija['datum_vazenja']>str(date.today()) or show_valid==False:
+            tabela.rows.append([akcija['sifra'],akcija['datum vazenja'], ispis_artikla(akcije),ispis_cena(akcije)])
+    tabela.columns.header = ["Sifra","Datum vazenja\n","artikli"]
+    return tabela
 def pretraga_akcija_string(kljuc, vrednost):
     akcije = ucitaj_akcije()
     filtrirane_akcije = []
@@ -27,7 +62,7 @@ def pretraga_akcija_jednakost(kljuc,vrednost):
             filtritane_akcije.append(akcija)
         return filtritane_akcije
 
-def sort():
+def sort1():
     while True:
         print("\nSortiraj po"
               "\n1. sifri"
@@ -49,7 +84,10 @@ def sort():
         akcije.sort(key=lambda akcije: akcije.get('sifra'))
     if sorter == 'datum_vazenja':
         akcije.sort(key=lambda akcije: akcije.get('datum_vazenja'))
-    ispis_akcija(akcije)
+
+
+def show_valid(args):
+    pass
 
 
 def pretrazi_akcija():
@@ -61,7 +99,7 @@ def pretrazi_akcija():
     stavka = int(input("Izaberite stavku: "))
     akcije = []
     if stavka == 1:
-        sifra = int(input("Unesite sifru: "))
+        sifra = input("Unesite sifru: ")
         akcije = pretraga_akcija_jednakost("sifra", sifra)
     elif stavka == 2:
         naslov = input("Unesite nalsov: ")
@@ -76,28 +114,7 @@ def pretrazi_akcija():
         return
     else:
         print("Pogresan unos")
-
-
-    ispis_akcija(akcije)
-
-
-def ispis_akcija(akcije):
-    zaglavlje = f"{'sifra':<10}" \
-                f"{'naslov':<20}" \
-                f"{'autor':^20}"\
-                f"{'kategorija':^20}"
-
-    print(zaglavlje)
-    print("-" * len(zaglavlje))
-
-    for akcija in akcije:
-        za_ispis = f"{akcija['sifra']:<10}" \
-                   f"{akcija['naziv']:<20}" \
-                   f"{akcija['autor']:^20}"\
-                   f"{akcija['kategorija']:^20}"
-
-        print(za_ispis)
-
+    table_create(akcije,show_valid)
 
 def registracija_akcija():
     for akcija in akcije:

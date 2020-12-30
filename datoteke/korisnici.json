@@ -19,5 +19,19 @@
         "ime": "Prodavac",
         "prezime": "Prodanovic",
         "tip_korisnika": "Prodavac"
+    },
+    {
+        "korisnicko_ime": "oleg",
+        "lozinka": "1234",
+        "ime": "oleg",
+        "prezime": "p",
+        "tip_korisnika": "Menadzer"
+    },
+    {
+        "korisnicko_ime": "Oleg",
+        "lozinka": "Amdfxeslms1",
+        "ime": "Oleg",
+        "prezime": "Petrekanovic",
+        "tip_korisnika": "Menadzer"
     }
 ]

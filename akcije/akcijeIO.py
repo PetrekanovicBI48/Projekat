@@ -10,4 +10,4 @@ def ucitaj_akcije():
 
 def sacuvaj_akcije(korisnici):
     with open(datoteka, "w") as f:
-        json.dump(korisnici, f)
+        json.dump(korisnici, f, indent=10)
