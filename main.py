@@ -1,13 +1,13 @@
 from korisnici.korisnici import prijava, sort, registracija
 from knjige.knjige import sortirane_knjige, pretrazi_knjige,brisanje_knjige, registracija_knjiga,izmena_knjiga
-from akcije.akcije import ucitaj_akcije,registracija_akcija,pretrazi_akcija,sort1
-
+from akcije.akcije import pretraga_akcija,sortirane_akcije,dodavanje_akcije
+from racun.racun import prodaja_knjige,izvestaj_autor
 
 def meni_administrator():
     while True:
         print("\n1. Sortiranje knjiga")
         print("2. Pretraga knjiga")
-        print("3. Prikaz akcija")
+        print("3. Prikaz svih akcija")
         print("4. Pretraga akcija")
         print("5. Registracija korisnika")
         print("6. Lista korisnika")
@@ -22,9 +22,9 @@ def meni_administrator():
         elif stavka == 2:
             pretrazi_knjige()
         elif stavka == 3:
-            pretrazi_akcija()
+            sortirane_akcije()
         elif stavka == 4:
-            pretrazi_akcija()
+            pretraga_akcija()
         elif stavka == 5:
             registracija()
         elif stavka == 6:
@@ -45,13 +45,12 @@ def meni_menadzer():
     while True:
         print("\n 1. Sortiranje knjiga")
         print(" 2. Pretraga knjiga")
-        print(" 3. Prikaz akcija")
-        print(" 4. Registracija akcija")
-        print(" 5. Registracija korisnika")
-        print(" 6. Lista korisnika")
-        print(" 7. Dodaj knjigu")
-        print(" 8. Izmeni knjigu")
-        print(" 9. Obrisi knjigu")
+        print(" 3. Prikaz svih akcija")
+        print(" 4. Pretraga akcija")
+        print(" 5. Registracija akcija")
+        print(" 6. Registracija korisnika")
+        print(" 7. Lista korisnika")
+        print(" 8. Kreiraj izvestaj")
         print(" 0. Kraj")
         stavka = int(input("Izaberite stavku: "))
 
@@ -60,19 +59,17 @@ def meni_menadzer():
         elif stavka == 2:
             pretrazi_knjige()
         elif stavka == 3:
-            ucitaj_akcije()
+            sortirane_akcije()
         elif stavka == 4:
-            registracija_akcija()
+            pretraga_akcija()
         elif stavka == 5:
-            registracija()
+            dodavanje_akcije()
         elif stavka == 6:
-            sort()
+            registracija()
         elif stavka == 7:
-            registracija_knjiga()
+            sort()
         elif stavka == 8:
-            izmena_knjiga()
-        elif stavka == 9:
-            brisanje_knjige()
+            izvestaj_autor()
         elif stavka == 0:
             return
         else:
@@ -83,7 +80,7 @@ def meni_prodavac():
     while True:
         print("\n1. Sortiranje knjiga")
         print("2. Pretraga knjiga")
-        print("3. Prikaz akcija")
+        print("3. Prikaz svih akcija")
         print("4. Pretraga akcija")
         print("5. Prodaj knjigu")
         print("6. Dodaj knjigu")
@@ -97,13 +94,11 @@ def meni_prodavac():
         elif stavka == 2:
             pretrazi_knjige()
         elif stavka == 3:
-            print("Nemate dozvolu za ovu komandu")
-            meni_prodavac()
+            sortirane_akcije()
         elif stavka == 4:
-            pretrazi_akcija()
+            pretraga_akcija()
         elif stavka == 5:
-            print("Nemate dozvolu za ovu komandu")
-            meni_prodavac()
+            prodaja_knjige(ulogovani_korisnik=True)
         elif stavka == 6:
             registracija_knjiga()
         elif stavka == 7:
@@ -117,14 +112,15 @@ def meni_prodavac():
 
 
 def main():
+    global ulogovani_korisnik
     for i in range(4):
-        if i == 3:
+        if i == 3 and ulogovani_korisnik == None:
             print("Previse neuspelih pokusaja za pprijavu!")
             exit()
 
         ulogovani_korisnik = prijava()
-        if ulogovani_korisnik != False :
-            print("Uspesna prijava!Tip korisnika:", ulogovani_korisnik['tip_korisnika'])
+        if ulogovani_korisnik != None :
+            print("Uspesna prijava!\nDobrodosli:", ulogovani_korisnik['ime'],ulogovani_korisnik['prezime'],"!\nTip korisnika:", ulogovani_korisnik['tip_korisnika'])
             if ulogovani_korisnik['tip_korisnika'] == 'Administrator':
                 meni_administrator()
             elif ulogovani_korisnik['tip_korisnika'] == 'Menadzer':

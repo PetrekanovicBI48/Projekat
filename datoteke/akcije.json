@@ -1,8 +1,21 @@
-[{
-  "sifra": 1,
-  "artikli": [{
-    "sifra": "324324",
-    "naslov": "He calls",
-    "cena": "30000"}],
-  "datum_vazenja": "2050-12-12"
-}]
+[
+          {
+                    "sifra": 1,
+                    "artikli": [
+                              {
+                                        "sifra": "4",
+                                        "naslov": "Dervis i smrt",
+                                        "autor": "Mesa Selimovic",
+                                        "isbn": "8493927482",
+                                        "izdavac": "Vulkan",
+                                        "broj strana": "323",
+                                        "godina": 2019,
+                                        "cena": 1550.0,
+                                        "kategorija": "Roman",
+                                        "brisanje": false
+                              }
+                    ],
+                    "nova_cena": 1300.0,
+                    "datum_vazenja": "12.12.2022"
+          }
+]

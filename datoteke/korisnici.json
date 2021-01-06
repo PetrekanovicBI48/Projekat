@@ -33,5 +33,33 @@
         "ime": "Oleg",
         "prezime": "Petrekanovic",
         "tip_korisnika": "Menadzer"
+    },
+    {
+        "korisnicko_ime": "Filip",
+        "lozinka": "fifi01xd",
+        "ime": "Filip",
+        "prezime": "Marcetic",
+        "tip_korisnika": "Menadzer"
+    },
+    {
+        "korisnicko_ime": "Luka",
+        "lozinka": "Ispan",
+        "ime": "Luka",
+        "prezime": "Jebac",
+        "tip_korisnika": "Prodavac"
+    },
+    {
+        "korisnicko_ime": "Tarzan",
+        "lozinka": "dzejn",
+        "ime": "Tarzan",
+        "prezime": "Prezime",
+        "tip_korisnika": "Prodavac"
+    },
+    {
+        "korisnicko_ime": "damjan",
+        "lozinka": "damjan",
+        "ime": "Damjan",
+        "prezime": "Pet",
+        "tip_korisnika": "Prodavac"
     }
 ]

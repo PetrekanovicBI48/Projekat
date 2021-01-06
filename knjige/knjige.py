@@ -4,29 +4,12 @@ from util import unos_sa_proverom
 
 tip_korisnika = 'neutralan'
 
-
-def dozvola(dozvole):
-    global tip_korisnika
-    tip_korisnika = dozvole
-
-
 knjige = ucitaj_knjige()
 i = 0
 z = len(knjige)
-
-duzina = [1, 1, 1, 1, 1, 1, 1, 1, 1]
-kljuc = ['sifra', 'naslov', 'isbn', 'autor', 'izdavac', 'broj strana', 'godina', 'cena', 'kategorija']
-
-
-def duzina_liste2():
-    max = '1'
-    for i in range(9):
-        max = len(str(knjige[0][kljuc[i]]))
-        for j in range(z - 1):
-            if (max < len(str(knjige[i + 1][kljuc[i]]))):
-                max = len(str(knjige[j + 1][kljuc[i]]))
-        duzina[i] = max
-
+korpa=[]
+duzina = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+kljuc = ['sifra', 'naslov', 'isbn', 'autor', 'izdavac', 'broj strana', 'godina', 'cena', 'kategorija', 'brisanje']
 
 def get_naslov(knjige):
     return knjige.get('title')
@@ -162,6 +145,7 @@ def ispisi_knjige(knjige):
                 f"{'isbn':^20}" \
                 f"{'izdavac':^20}" \
                 f"{'godina izdanja':^20}" \
+                f"{'broj strana':^20}" \
                 f"{'cena':^20}" \
                 f"{'kategorija':^20}"
 
@@ -169,23 +153,26 @@ def ispisi_knjige(knjige):
     print("-" * len(zaglavlje))
 
     for knjiga in knjige:
-        za_ispis = f"{knjiga['sifra']:<10}" \
-                   f"{knjiga['naslov']:<20}" \
-                   f"{knjiga['autor']:<20}" \
-                   f"{knjiga['isbn']:^20}" \
-                   f"{knjiga['izdavac']:^20}" \
-                   f"{knjiga['godina']:^20}" \
-                   f"{knjiga['cena']:^20}" \
-                   f"{knjiga['kategorija']:^20}"
-        print(za_ispis)
+        if knjiga['brisanje'] == False:
+            za_ispis = f"{knjiga['sifra']:<10}" \
+                       f"{knjiga['naslov']:<20}" \
+                       f"{knjiga['autor']:<20}" \
+                       f"{knjiga['isbn']:^20}" \
+                       f"{knjiga['izdavac']:^20}" \
+                       f"{knjiga['godina']:^20}" \
+                       f"{knjiga['broj strana']:^20}" \
+                       f"{knjiga['cena']:^20}" \
+                       f"{knjiga['kategorija']:^20}"
+            print(za_ispis)
+        else:
+            pass
 
 
-def registracija_knjiga():
+def registracija_knjiga(brisanje=None):
     while True:
         sifra = unos_sa_proverom("\n Sifra **za povratak upisite nazad**:")
         if sifra == 'nazad':
             return
-        print("testoo")
         postojeca_sifra = False
         for knjiga in knjige:
             if knjiga['sifra'] == sifra:
@@ -194,7 +181,6 @@ def registracija_knjiga():
                 break
         if postojeca_sifra == False:
             break
-    print("testoo")
     naslov = input('naslov:')
     autor = input('autor:')
     isbn = input('isbn:')
@@ -225,6 +211,7 @@ def registracija_knjiga():
     nova_knjiga['godina'] = godina
     nova_knjiga['cena'] = cena
     nova_knjiga['kategorija'] = kategorija
+    nova_knjiga['brisanje'] = False
 
     ispisi_knjige([nova_knjiga])
     knjige.append(nova_knjiga)
@@ -295,7 +282,7 @@ def izmena_knjiga():
         kategorija = knjige[i]['kategorija']
     brisanje = knjige[i]['brisanje']
     nova_knjiga = {
-        "sifra": 3,
+        "sifra": "3",
         "naslov": "Knjiga 1",
         "autor": "Pera Peric",
         "isbn": "1312312312312",
@@ -350,11 +337,23 @@ def brisanje_knjige():
     if z == -1:
         print("knjiga nije pronadjena, pokusaj ponovo!")
         if brisanje_knjige() == False:
-             return False
+            return False
+
     obrisane_knjige = [knjige[z]]
     print('\nKnjiga se brise!')
     ispisi_knjige(obrisane_knjige)
+    while True:
+        print("\nZelite li da nastavite?\n1. Da\n2. Ne")
+        stavka = input('Odaberite opciju:')
+        if stavka == '1':
+            obrisane_knjige = knjige[z]
+            obrisane_knjige['brisanje'] = True
+            break
+        elif stavka == '2':
+            return False
+        else:
+            print("Pogresan unos,pokusajte ponovo")
     sacuvaj_knjige(knjige)
-    print('Knjiga je obrisana')
-    #    print('%s je obrisana u bazu podataka. Knjiga sifra=[%s]' % (obrisane_knjige['naslov'], obrisane_knjige['sifra']))
+    print("Brisanje knjige!")
     return False
+

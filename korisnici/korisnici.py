@@ -58,7 +58,7 @@ def ispis_korisnika(korisnici):
                 f"{'tip_korisnika':<20}"
 
     print(zaglavlje)
-    print("-" * len(zaglavlje))
+    print("<*>" * len(zaglavlje))
 
     for korisnik in korisnici:
         za_ispis = f"{korisnik['ime']:<10}" \

@@ -1,6 +1,6 @@
 [
           {
-                    "sifra": 3,
+                    "sifra": "3",
                     "naslov": "Knjiga 1",
                     "autor": "Pera Peric",
                     "isbn": "1312312312312",
@@ -8,10 +8,11 @@
                     "broj strana": "231",
                     "godina": 2020,
                     "cena": 650.0,
-                    "kategorija": "Roman"
+                    "kategorija": "Roman",
+                    "brisanje": false
           },
           {
-                    "sifra": 1,
+                    "sifra": "1",
                     "naslov": "Knjiga 2",
                     "autor": "Marko Markovic",
                     "isbn": "13123123332325",
@@ -19,10 +20,11 @@
                     "broj strana": 323,
                     "godina": 2019,
                     "cena": 750.0,
-                    "kategorija": "Roman"
+                    "kategorija": "Roman",
+                    "brisanje": false
           },
           {
-                    "sifra": 2,
+                    "sifra": "2",
                     "naslov": "Medvedgrad",
                     "autor": "Fredrik Bakman",
                     "isbn": "9788652139743",
@@ -30,10 +32,11 @@
                     "broj strana": 213,
                     "godina": 2020,
                     "cena": 899.1,
-                    "kategorija": "Roman"
+                    "kategorija": "Roman",
+                    "brisanje": false
           },
           {
-                    "sifra": 794053,
+                    "sifra": "794053",
                     "naslov": "Put revolucije",
                     "autor": "Richard Jejts",
                     "isbn": "3479312568879",
@@ -41,18 +44,67 @@
                     "broj strana": 123,
                     "godina": 2020,
                     "cena": 1210.0,
-                    "kategorija": "Roman"
+                    "kategorija": "Roman",
+                    "brisanje": false
           },
           {
-                    "sifra": "12",
-                    "naslov": "Olegoba knjiga",
-                    "autor": "oleg",
-                    "isbn": "120600182820037",
-                    "izdavac": "WSHH",
-                    "broj strana": 69,
-                    "godina": 420,
-                    "cena": 420.69,
-                    "kategorija": "Pisme",
+                    "sifra": "5",
+                    "naslov": "Pfff",
+                    "autor": "test",
+                    "isbn": "123441511",
+                    "izdavac": "wshh",
+                    "broj strana": 421,
+                    "godina": 2021,
+                    "cena": 2000.0,
+                    "kategorija": "rep",
                     "brisanje": false
+          },
+          {
+                    "sifra": "4",
+                    "naslov": "Dervis i smrt",
+                    "autor": "Mesa Selimovic",
+                    "isbn": "8493927482",
+                    "izdavac": "Vulkan",
+                    "broj strana": "323",
+                    "godina": 2019,
+                    "cena": 1550.0,
+                    "kategorija": "Roman",
+                    "brisanje": false
+          },
+          {
+                    "sifra": "69",
+                    "naslov": "Ko to muti bistru vodu",
+                    "autor": "Marinko Rokvic",
+                    "isbn": "123123142",
+                    "izdavac": "RTS",
+                    "broj strana": 3,
+                    "godina": 2017,
+                    "cena": 33.0,
+                    "kategorija": "Narodna muzika",
+                    "brisanje": false
+          },
+          {
+                    "sifra": "222",
+                    "naslov": "ko to muti",
+                    "autor": "Rokvic Radivoje",
+                    "isbn": "141341412",
+                    "izdavac": "Neznam",
+                    "broj strana": 321,
+                    "godina": 2010,
+                    "cena": 220.0,
+                    "kategorija": "Pesme",
+                    "brisanje": false
+          },
+          {
+                    "sifra": "13",
+                    "naslov": "shandorski memoari",
+                    "autor": "damjan pet",
+                    "isbn": "13",
+                    "izdavac": "shandor",
+                    "broj strana": 365,
+                    "godina": 2020,
+                    "cena": 999.0,
+                    "kategorija": "scifi",
+                    "brisanje": true
           }
 ]

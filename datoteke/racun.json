@@ -1,11 +1,39 @@
-[{
-  "sifra": 1,
-  "prodavac": "",
-  "datum_vreme": "",
-  "artikli": [{
-    "sifra": "",
-    "kolicina": "",
-    "cena": ""
-  }],
-  "Ukupna_suma": ""
-}]
+[
+    {
+        "sifra": 666,
+        "prodavac": "Prodavac",
+        "datum_vreme": "2020-12-27T18:16:25.925653",
+        "artikli": [
+            {
+                "sifra": 1,
+                "naslov": "Na Drini cuprija",
+                "autor": "Ivo Andric",
+                "isbn": "38829274920",
+                "izdavac": "Vulkan",
+                "broj strana": "231",
+                "godina": 2020,
+                "cena": 1000.0,
+                "kategorija": "Roman",
+                "kolicina": 1
+            }
+        ],
+        "akcije": [
+            {
+                "sifra": 1111,
+                "artikli": [
+                    {
+                        "naslov": "Proces",
+                        "cena": 1030.0
+                    },
+                    {
+                        "naslov": "Alhemicar",
+                        "cena": 1400.0
+                    }
+                ],
+                "nova cena": 900.0,
+                "datum_vazenja": "1.12.2021.",
+                "kolicina": 1
+            }
+        ],
+        "ukupno": 1000.0
+    }]

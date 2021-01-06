@@ -1,15 +1,10 @@
 from akcije.akcijeIO import ucitaj_akcije
-from knjige.knjigeIO import ucitaj_knjige
 from datetime import date
-from beautifultable import BeautifulTable
 
 akcije = ucitaj_akcije()
-knjige = ucitaj_knjige()
 n = len(akcije)
-kljuc = ['sifra', 'naslov', 'autor', 'kateogrija', 'artikli','datum_vazenja']
-print("1111"
-      "1")
 
+kljuc = ['naslov', 'autor', 'kategorija']
 
 def ispis_table(akcije, show_valid):
     for akcija in akcije:
@@ -27,8 +22,11 @@ def ispis_table(akcije, show_valid):
                     za_ispis = f"{akcije[i]['sifra']:<10}" \
                            f"{akcije[i]['artikli'][j]['naslov']:<20}" \
                            f"{akcije[i]['artikli'][j]['cena']:^20}" \
-                           f"{akcije[i]['nova cena']:^20}" \
+                           f"{akcije[i]['nova_cena']:^20}" \
                            f"{akcije[i]['datum_vazenja']:^20}"
 
                     print(za_ispis)
-ispis_table(akcije, show_valid=False)
+
+
+
+ispis_table(akcije,show_valid=False)
