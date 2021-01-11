@@ -7,12 +7,12 @@ tip_korisnika = 'neutralan'
 knjige = ucitaj_knjige()
 i = 0
 z = len(knjige)
-korpa=[]
+
 duzina = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 kljuc = ['sifra', 'naslov', 'isbn', 'autor', 'izdavac', 'broj strana', 'godina', 'cena', 'kategorija', 'brisanje']
 
 def get_naslov(knjige):
-    return knjige.get('title')
+    return knjige.get('naslov')
 
 
 def get_kategorija(knjige):
@@ -202,7 +202,7 @@ def registracija_knjiga(brisanje=None):
         "kategorija": "Roman",
         "brisanje": False
     }
-    nova_knjiga['sifra'] = sifra
+    nova_knjiga['sifra'] = int(sifra)
     nova_knjiga['naslov'] = naslov
     nova_knjiga['autor'] = autor
     nova_knjiga['isbn'] = isbn
@@ -222,15 +222,15 @@ def registracija_knjiga(brisanje=None):
 
 def izmena_knjiga():
     unos = 0
-    sifra = input("\n Sifra **'nazad' za povratak**:")
+    sifra = unos_sa_proverom("\n Sifra **'nazad' za povratak**:")
     i = 0
+    if sifra == 'nazad':
+        return False
     for knjiga in knjige:
-        if knjiga['sifra'] == sifra:
+        if knjiga['sifra'] == int(sifra):
             unos = 1
             print("Knjiga pronadjena!")
             break
-        elif sifra == 'nazad':
-            return False
         i += 1
     if unos == 0:
         print("Knjiga nije pronadjena, pokusaj opet!")
@@ -304,7 +304,7 @@ def izmena_knjiga():
     nova_knjiga['kategorija'] = kategorija
     nova_knjiga['brisanje'] = brisanje
 
-    stara_knjiga = [knjige[z], nova_knjiga]
+    stara_knjiga = [nova_knjiga]
     print("\nIzmena ")
     ispisi_knjige(stara_knjiga)
 
@@ -317,7 +317,7 @@ def brisanje_knjige():
     z = -1
     i = 0
     while True:
-        sifra = input("\nSifra **nazad za povratak**:")
+        sifra = input("\nSifra **'nazad' za povratak**:")
         if sifra == 'nazad':
             return False
         elif sifra != '':
@@ -329,7 +329,7 @@ def brisanje_knjige():
                 return
 
     for knjiga in knjige:
-        if knjiga['sifra'] == sifra:
+        if knjiga['sifra'] == int(sifra):
             print("Knjiga je pronadjenja")
             z = i
             break

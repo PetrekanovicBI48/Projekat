@@ -1,4 +1,3 @@
-import re
 from korisnici.korisniciIO import ucitaj_korisnike, sacuvaj_korisnike
 from util import unos_sa_proverom
 

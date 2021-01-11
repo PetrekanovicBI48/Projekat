@@ -1,7 +1,7 @@
 from korisnici.korisnici import prijava, sort, registracija
 from knjige.knjige import sortirane_knjige, pretrazi_knjige,brisanje_knjige, registracija_knjiga,izmena_knjiga
 from akcije.akcije import pretraga_akcija,sortirane_akcije,dodavanje_akcije
-from racun.racun import prodaja_knjige,izvestaj_autor
+from racun.racun import prodaja_knjige, izvestaj,izvestaj_ukupna_prodaja
 
 def meni_administrator():
     while True:
@@ -15,30 +15,33 @@ def meni_administrator():
         print("8. Izmeni knjigu")
         print("9. Obrisi knjigu")
         print("0. Kraj")
-        stavka = int(input("Izaberite stavku: "))
+        try:
+            stavka = int(input("Izaberite stavku: "))
 
-        if stavka == 1:
-            sortirane_knjige()
-        elif stavka == 2:
-            pretrazi_knjige()
-        elif stavka == 3:
-            sortirane_akcije()
-        elif stavka == 4:
-            pretraga_akcija()
-        elif stavka == 5:
-            registracija()
-        elif stavka == 6:
-            sort()
-        elif stavka == 7:
-            registracija_knjiga()
-        elif stavka == 8:
-            izmena_knjiga()
-        elif stavka == 9:
-            brisanje_knjige()
-        elif stavka == 0:
-            return
-        else:
-            print("Pokusajte ponovo!")
+            if stavka == 1:
+                sortirane_knjige()
+            elif stavka == 2:
+                pretrazi_knjige()
+            elif stavka == 3:
+                sortirane_akcije()
+            elif stavka == 4:
+                pretraga_akcija()
+            elif stavka == 5:
+                registracija()
+            elif stavka == 6:
+                sort()
+            elif stavka == 7:
+                registracija_knjiga()
+            elif stavka == 8:
+                izmena_knjiga()
+            elif stavka == 9:
+                brisanje_knjige()
+            elif stavka == 0:
+                return
+            else:
+                print("Pokusajte ponovo!")
+        except:
+            print("Greska")
 
 
 def meni_menadzer():
@@ -69,7 +72,7 @@ def meni_menadzer():
         elif stavka == 7:
             sort()
         elif stavka == 8:
-            izvestaj_autor()
+            izvestaj()
         elif stavka == 0:
             return
         else:
@@ -98,7 +101,7 @@ def meni_prodavac():
         elif stavka == 4:
             pretraga_akcija()
         elif stavka == 5:
-            prodaja_knjige(ulogovani_korisnik=True)
+            prodaja_knjige(ulogovani_korisnik)
         elif stavka == 6:
             registracija_knjiga()
         elif stavka == 7:

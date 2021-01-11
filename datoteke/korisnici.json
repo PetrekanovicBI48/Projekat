@@ -61,5 +61,12 @@
         "ime": "Damjan",
         "prezime": "Pet",
         "tip_korisnika": "Prodavac"
+    },
+    {
+        "korisnicko_ime": "Sus",
+        "lozinka": "Sus",
+        "ime": "Sus",
+        "prezime": "Sus",
+        "tip_korisnika": "Menadzer"
     }
 ]

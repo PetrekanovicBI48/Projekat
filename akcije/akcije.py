@@ -10,8 +10,6 @@ knjige = ucitaj_knjige()
 kljuc = ['naslov','autor','kategorija','sifra','datum_vazenja','nova_cena']
 
 def ispis_table(akcije, show_valid):
-    for akcija in akcije:
-        if str(date.today()) < akcija["datum_vazenja"] or show_valid == False:
             zaglavlje = f"{'sifra':<10}" \
                     f"{'naslov':<20}" \
                     f"{'stara cena':^20}" \
@@ -21,14 +19,15 @@ def ispis_table(akcije, show_valid):
             print(zaglavlje)
             print("-" * len(zaglavlje))
             for i in range(0, len(akcije)):
-                for j in range(0, len(akcije[i]['artikli'])):
-                    za_ispis = f"{akcije[i]['sifra']:<10}" \
+                if akcije[i]["datum_vazenja"]>str(date.today()) or show_valid == False:
+                    for j in range(0, len(akcije[i]['artikli'])):
+                        za_ispis = f"{akcije[i]['sifra']:<10}" \
                            f"{akcije[i]['artikli'][j]['naslov']:<20}" \
                            f"{akcije[i]['artikli'][j]['cena']:^20}" \
-                           f"{akcije[i]['nova_cena']:^20}" \
+                           f"{akcije[i]['artikli'][j]['nova cena']:^20}" \
                            f"{akcije[i]['datum_vazenja']:^20}"
 
-                    print(za_ispis)
+                        print(za_ispis)
 
 def pretraga_akcija_string(kljuc, vrednost):
     akcije = ucitaj_akcije()
@@ -41,7 +40,7 @@ def pretraga_akcija_string(kljuc, vrednost):
     else:
         for akcija in akcije:
             for artikal in akcija['artikli']:
-                if artikal[kljuc].lower() ==vrednost.lower():
+                if artikal[kljuc].lower() == vrednost.lower():
                     filtrirane_akcije.append(akcija)
     return filtrirane_akcije
 
@@ -53,7 +52,7 @@ def pretraga_akcija_jednakost(kljuc, vrednost):
     for akcija in akcije:
         if vrednost == akcija[kljuc]:
             filtritane_akcije.append(akcija)
-        return filtritane_akcije
+    return filtritane_akcije
 
 def sortiranje_akcija(kljuc):
     for i in range(len(akcije)):
@@ -72,10 +71,8 @@ def sortirane_akcije():
         stavka = int(input("Opcija:"))
         if stavka == 1:
             sortiranje_akcija('sifra')
-            #ispis_table(akcije, show_valid=False)
         elif stavka == 2:
             sortiranje_akcija('datum_vazenja')
-            #ispis_table(akcije, show_valid=False)
         elif stavka == 0:
             return False
         else:
@@ -109,29 +106,34 @@ def pretraga_akcija():
         print("Pogresan unos, pokusajte ponovo!")
     ispis_table(akcije,show_valid)
 def dodavanje_akcije():
-    nova_akcija={
-        "sifra:":1,
-        "artikli":[],
-        "nova cena":1111.1,
-        "datum_vazenja":"12.06.2021"
-    }
-    sifra= akcije[-1]['sifra']
-    nova_akcija['sifra']=sifra+1
+
+    nova_akcija= {"sifra": 1,
+                  "artikli": [],
+                  "datum_vazenja": "12.06.2021",
+                  }
+    sifra = akcije[-1]['sifra']
+    nova_akcija['sifra'] = sifra + 1
+
     dodavanje_knjige= True
-    while (dodavanje_knjige):
-        sifra=unos_sa_proverom("unesite sifru('nazad' za povratak,'benz' za prekid unosa knjiga)\nsifra:")
-        if sifra=='nazad':
+    while dodavanje_knjige:
+        sifra=unos_sa_proverom("unesite sifru knjige koju\nzelite da stavite u akciju('nazad' za povratak,'x' za prekid unosa knjiga)\nsifra:")
+        if sifra == 'nazad':
             return
-        elif sifra == 'benz':
-            dodavanje_knjige= False
+        elif sifra == 'x':
+            dodavanje_knjige = False
+
         else:
             for knjiga in knjige:
                 if knjiga['sifra']==int(sifra):
-                    nova_cena = input("\nUnesi novu cenu knjige: ")
-                    knjiga['nova cena'] = nova_cena
-                    nova_akcija['artikli'].append(knjiga)
-        datum_vazenja = input("\nUnesi datum vazenja akije: ")
-        nova_akcija['datum_vazenja'] = datum_vazenja
-        akcije.append(nova_akcija)
+                    if knjiga['brisanje']== False:
+                        nova_cena = float(input("\nUnesi novu cenu knjige: "))
+                        knjiga['nova cena'] = nova_cena
+                        nova_akcija['artikli'].append(knjiga)
+                    else:
+                        print('knjiga ne postoji!')
+    datum_vazenja = input("\nUnesi datum vazenja akije: ")
+    nova_akcija['datum_vazenja'] = datum_vazenja
+    akcije.append(nova_akcija)
+    if len(nova_akcija['artikli'])>0:
         sacuvaj_akcije(akcije)
         print('Nova akcija je dodata u bazu podataka. Sifra akcije=[%s]' % (nova_akcija['sifra']))

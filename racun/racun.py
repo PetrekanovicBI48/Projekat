@@ -2,36 +2,38 @@ from racun.racunIO import ucitaj_racun, sacuvaj_racun
 from knjige.knjigeIO import ucitaj_knjige
 from akcije.akcijeIO import ucitaj_akcije
 from datetime import datetime
-
+from korisnici.korisniciIO import ucitaj_korisnike
 racuni = ucitaj_racun()
 knjige = ucitaj_knjige()
 akcije = ucitaj_akcije()
-
+kljuc=['korisnicko_ime']
+ulogovani_korisnik=ucitaj_korisnike()
 
 def prodaja_knjige(ulogovani_korisnik):
     now = datetime.now()
     novi_racun = {
-        "sifra": 666,
+        "sifra": "666",
         "prodavac": ulogovani_korisnik['korisnicko_ime'],
         "datum_vreme": "2020-12-27T18:16:25.925653",
         "artikli": [], "akcije": [],
         "cena": 0.0
-    }
+         }
     novi_racun['sifra'] = racuni[-1]['sifra'] + 1
     unos_artikala = True
-    while(unos_artikala):
-        sifra = input("\n Unesi sifru knjige ili akcije (unesi 'nazad' za povratak u meni, unesi 'x' za prekid unosa knjiga):")
+    while (unos_artikala):
+        sifra = input(
+            "\n Unesi sifru knjige ili akcije (unesi 'nazad' za povratak u meni, unesi 'x' za prekid unosa knjiga):\nSifra:")
         if sifra == 'nazad':
             return
         elif sifra == 'x':
             unos_artikala = False
         else:
             for knjiga in knjige:
-                if knjiga['sifra'] == int(sifra) and knjiga['obrisano']=="False":
+                if knjiga['sifra'] == int(sifra) and knjiga['brisanje'] == False:
                     kolicina = input("\n Unesi kolicinu:")
                     knjiga['kolicina'] = kolicina
                     novi_racun['artikli'].append(knjiga)
-                    novi_racun['cena'] += knjiga['cena']*int(kolicina)
+                    novi_racun['cena'] += knjiga['cena'] * int(kolicina)
                     continue
             for akcija in akcije:
                 if akcija['sifra'] == int(sifra):
@@ -39,7 +41,7 @@ def prodaja_knjige(ulogovani_korisnik):
                     akcija['kolicina'] = kolicina
                     novi_racun['akcije'].append(akcija)
                     for artikal in akcija['artikli']:
-                        novi_racun['cena'] += float(artikal['nova cena'])*int(kolicina)
+                        novi_racun['cena'] += float(artikal['nova cena']) * int(kolicina)
     ispis_knjiga_racun(novi_racun)
     ispis_akcija_racun(novi_racun)
     a = True
@@ -57,20 +59,23 @@ def prodaja_knjige(ulogovani_korisnik):
         else:
             print('Uneli ste pogresnu opciju. Pokusajte ponovo.')
 
+
 def pravljenje_racuna(racun):
     ispis_zaglavlja(racun)
     ispis_knjiga_racun(racun)
     ispis_akcija_racun(racun)
     ispis_racun_ukupno(racun)
 
+
 def ispis_zaglavlja(racun):
     print('sifra racuna: ', racun['sifra'])
-    print('prodavac: ',racun['prodavac'])
-    print('datum i vreme: ',datetime.now().isoformat())
-    print('__'*20)
+    print('prodavac: ', racun['prodavac'])
+    print('datum i vreme: ', datetime.now().isoformat())
+    print('__' * 20)
+
 
 def ispis_knjiga_racun(racun):
-    if racun['artikli']!=[]:
+    if racun['artikli'] != []:
         zaglavlje = f"{'artikli':<20}" \
                     f"{'cena':<20}" \
                     f"{'kolicina':<20}"
@@ -84,6 +89,7 @@ def ispis_knjiga_racun(racun):
                        f"{knjiga['kolicina']:^20}"
             print(za_ispis)
         print("-" * len(zaglavlje))
+
 
 def ispis_akcija_racun(racun):
     if racun['akcije'] != []:
@@ -101,9 +107,9 @@ def ispis_akcija_racun(racun):
                 print(za_ispis)
         print("-" * len(zaglavlje))
 
+
 def ispis_racun_ukupno(racun):
     print("Ukupno: ", racun['cena'])
-
 
 
 def kraj_kupovine():
@@ -127,26 +133,29 @@ def kraj_kupovine():
     print(racun)
     return False
 
+
 def izvestaj_ukupna_prodaja():
-    recnik ={}
+    recnik = {}
     for knjiga in knjige:
         recnik[knjiga['naslov']] = 0
     for racun in racuni:
         for artikal in racun['artikli']:
-            recnik[artikal['naslov']]+=int(artikal['kolicina'])
+            recnik[artikal['naslov']] += int(artikal['kolicina'])
         for akcije in racun['akcije']:
             for artikal in akcije['artikli']:
-                recnik[artikal['naslov']]+=int(akcije['kolicina'])
+                recnik[artikal['naslov']] += int(akcije['kolicina'])
     print(recnik)
 
+
 def izvestaj_prodaja_akcija():
-    recnik ={}
+    recnik = {}
     for akcija in akcije:
         recnik[akcija['sifra']] = 0
     for racun in racuni:
         for akcija in racun['akcije']:
-            recnik[akcija['sifra']]+=int(akcija['kolicina'])
+            recnik[akcija['sifra']] += int(akcija['kolicina'])
     print(recnik)
+
 
 def izvestaj_autor():
     autor = input("Unesi ime autora: ")
@@ -157,9 +166,47 @@ def izvestaj_autor():
     for racun in racuni:
         for artikal in racun['artikli']:
             if artikal['naslov'] in recnik.keys():
-                recnik[artikal['naslov']] +=int(artikal['kolicina'])
+                recnik[artikal['naslov']] += int(artikal['kolicina'])
         for akcija in racun['akcije']:
             for artikal in akcija['artikli']:
                 if artikal['naslov'] in recnik.keys():
-                    recnik[artikal['naslov']]+=int(akcija['kolicina'])
+                    recnik[artikal['naslov']] += int(akcija['kolicina'])
     print(recnik)
+
+
+def izvesta_izdavac():
+    izdavac = input("Unesite izdavaca:")
+    recnik = {}
+    for knjiga in knjige:
+        if knjiga['izdavac'].lower() == izdavac.lower():
+            recnik[knjiga['naslov']] = 0
+    for racun in racuni:
+        for artikal in racun['artikli']:
+            if artikal['naslov'] in recnik.keys():
+                recnik[artikal['naslov']] += int(artikal['kolicina'])
+        for akcija in racun['akcije']:
+            for artikal in akcija['artikli']:
+                if artikal['naslov'] in recnik.keys():
+                    recnik[artikal['naslov']] += int(akcija['kolicina'])
+    print(recnik)
+
+
+def izvestaj():
+    print("1. Izvestaj ukupne prodaje knjiga"
+          "\n2. Izvestaj prodaje akcija"
+          "\n3. Izvestaj prodaje po autorima"
+          "\n4. Izvestaj prodaje izdavaca"
+          "\n0. Nazad")
+    stavka = int(input("Izaberite opciju:"))
+    if stavka == 1:
+        izvestaj_ukupna_prodaja()
+    elif stavka == 2:
+        izvestaj_prodaja_akcija()
+    elif stavka == 3:
+        izvestaj_autor()
+    elif stavka == 4:
+        izvesta_izdavac()
+    elif stavka == 0:
+        return
+    else:
+        print("pogresan unos, pokusajte ponovo!")

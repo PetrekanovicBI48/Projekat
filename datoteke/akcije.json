@@ -1,21 +1,107 @@
 [
-          {
-                    "sifra": 1,
-                    "artikli": [
-                              {
-                                        "sifra": "4",
-                                        "naslov": "Dervis i smrt",
-                                        "autor": "Mesa Selimovic",
-                                        "isbn": "8493927482",
-                                        "izdavac": "Vulkan",
-                                        "broj strana": "323",
-                                        "godina": 2019,
-                                        "cena": 1550.0,
-                                        "kategorija": "Roman",
-                                        "brisanje": false
-                              }
-                    ],
-                    "nova_cena": 1300.0,
-                    "datum_vazenja": "12.12.2022"
-          }
+    {
+        "sifra": 1111,
+        "artikli": [
+            {
+                "sifra": 5,
+                "naslov": "Proces",
+                "autor": "Kafka",
+                "isbn": "22332233",
+                "izdavac": "Vulkan",
+                "broj strana": 130,
+                "godina": 2003,
+                "cena": 1030.0,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "nova cena": 2444.0
+            }
+        ],
+        "datum_vazenja": "20.02.2021"
+    },
+    {
+        "sifra": 1112,
+        "artikli": [
+            {
+                "sifra": 1,
+                "naslov": "Na Drini cuprija",
+                "autor": "Ivo Andric",
+                "isbn": "38829274920",
+                "izdavac": "Vulkan",
+                "broj strana": "231",
+                "godina": 2020,
+                "cena": 1000.0,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "nova cena": 200.0
+            }
+        ],
+        "datum_vazenja": "20.03.2021"
+    },
+    {
+        "sifra": 1113,
+        "artikli": [
+            {
+                "sifra": 1,
+                "naslov": "Na Drini cuprija",
+                "autor": "Ivo Andric",
+                "isbn": "38829274920",
+                "izdavac": "Vulkan",
+                "broj strana": "231",
+                "godina": 2020,
+                "cena": 1000.0,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "nova cena": 200.0
+            }
+        ],
+        "datum_vazenja": "20.02.2021"
+    },
+    {
+        "sifra": 1114,
+        "artikli": [],
+        "datum_vazenja": "x"
+    },
+    {
+        "sifra": 1115,
+        "artikli": [],
+        "datum_vazenja": "20.02.2021"
+    },
+    {
+        "sifra": 1116,
+        "artikli": [
+            {
+                "sifra": 3,
+                "naslov": "Ana Karenjina",
+                "autor": "Tolstoj",
+                "isbn": "456372839",
+                "izdavac": "Laguna",
+                "broj strana": "213",
+                "godina": 2020,
+                "cena": 1899.1,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "nova cena": 240.0
+            }
+        ],
+        "datum_vazenja": "14.03.2021"
+    },
+    {
+        "sifra": 1117,
+        "artikli": [
+            {
+                "sifra": 5,
+                "naslov": "Proces",
+                "autor": "Kafka",
+                "isbn": "22332233",
+                "izdavac": "Vulkan",
+                "broj strana": 130,
+                "godina": 2003,
+                "cena": 1030.0,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "nova cena": 240.0
+            }
+        ],
+        "datum_vazenja": "20.4.2021"
+    }
 ]
