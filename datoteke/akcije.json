@@ -22,86 +22,32 @@
         "sifra": 1112,
         "artikli": [
             {
-                "sifra": 1,
-                "naslov": "Na Drini cuprija",
-                "autor": "Ivo Andric",
-                "isbn": "38829274920",
-                "izdavac": "Vulkan",
-                "broj strana": "231",
-                "godina": 2020,
-                "cena": 1000.0,
+                "sifra": 99,
+                "naslov": "Nikoto",
+                "autor": "Strahinja Svorcan",
+                "isbn": "1274174124",
+                "izdavac": "WSHH",
+                "broj strana": 400,
+                "godina": 2021,
+                "cena": 5000.0,
                 "kategorija": "Roman",
                 "brisanje": false,
-                "nova cena": 200.0
-            }
-        ],
-        "datum_vazenja": "20.03.2021"
-    },
-    {
-        "sifra": 1113,
-        "artikli": [
+                "nova cena": 2500.0
+            },
             {
-                "sifra": 1,
-                "naslov": "Na Drini cuprija",
-                "autor": "Ivo Andric",
-                "isbn": "38829274920",
+                "sifra": 14,
+                "naslov": "Mladi samuraj",
+                "autor": "Bredford Kris",
+                "isbn": "528594105",
                 "izdavac": "Vulkan",
-                "broj strana": "231",
-                "godina": 2020,
-                "cena": 1000.0,
-                "kategorija": "Roman",
+                "broj strana": 186,
+                "godina": 2009,
+                "cena": 650.0,
+                "kategorija": "Decija literatura",
                 "brisanje": false,
-                "nova cena": 200.0
+                "nova cena": 399.0
             }
         ],
-        "datum_vazenja": "20.02.2021"
-    },
-    {
-        "sifra": 1114,
-        "artikli": [],
-        "datum_vazenja": "x"
-    },
-    {
-        "sifra": 1115,
-        "artikli": [],
-        "datum_vazenja": "20.02.2021"
-    },
-    {
-        "sifra": 1116,
-        "artikli": [
-            {
-                "sifra": 3,
-                "naslov": "Ana Karenjina",
-                "autor": "Tolstoj",
-                "isbn": "456372839",
-                "izdavac": "Laguna",
-                "broj strana": "213",
-                "godina": 2020,
-                "cena": 1899.1,
-                "kategorija": "Roman",
-                "brisanje": false,
-                "nova cena": 240.0
-            }
-        ],
-        "datum_vazenja": "14.03.2021"
-    },
-    {
-        "sifra": 1117,
-        "artikli": [
-            {
-                "sifra": 5,
-                "naslov": "Proces",
-                "autor": "Kafka",
-                "isbn": "22332233",
-                "izdavac": "Vulkan",
-                "broj strana": 130,
-                "godina": 2003,
-                "cena": 1030.0,
-                "kategorija": "Roman",
-                "brisanje": false,
-                "nova cena": 240.0
-            }
-        ],
-        "datum_vazenja": "20.4.2021"
+        "datum_vazenja": "12.6.2021"
     }
 ]

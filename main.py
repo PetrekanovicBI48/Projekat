@@ -1,7 +1,7 @@
 from korisnici.korisnici import prijava, sort, registracija
 from knjige.knjige import sortirane_knjige, pretrazi_knjige,brisanje_knjige, registracija_knjiga,izmena_knjiga
 from akcije.akcije import pretraga_akcija,sortirane_akcije,dodavanje_akcije
-from racun.racun import prodaja_knjige, izvestaj,izvestaj_ukupna_prodaja
+from racun.racun import prodaja_knjige, izvestaj
 
 def meni_administrator():
     while True:

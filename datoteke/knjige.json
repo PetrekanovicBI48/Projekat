@@ -57,7 +57,7 @@
                     "godina": 2003,
                     "cena": 1030.0,
                     "kategorija": "Roman",
-                    "brisanje": false
+                    "brisanje": true
           },
           {
                     "sifra": 6,
@@ -142,5 +142,53 @@
                     "cena": 2300.0,
                     "kategorija": "Pesme",
                     "brisanje": true
+          },
+          {
+                    "sifra": 99,
+                    "naslov": "Nikoto",
+                    "autor": "Strahinja Svorcan",
+                    "isbn": "1274174124",
+                    "izdavac": "WSHH",
+                    "broj strana": 400,
+                    "godina": 2021,
+                    "cena": 5000.0,
+                    "kategorija": "Roman",
+                    "brisanje": false
+          },
+          {
+                    "sifra": 14,
+                    "naslov": "Mladi samuraj",
+                    "autor": "Bredford Kris",
+                    "isbn": "528594105",
+                    "izdavac": "Vulkan",
+                    "broj strana": 186,
+                    "godina": 2009,
+                    "cena": 650.0,
+                    "kategorija": "Decija literatura",
+                    "brisanje": true
+          },
+          {
+                    "sifra": 18,
+                    "naslov": "Mladi samuraj put maca",
+                    "autor": "kris bredford",
+                    "isbn": "1240101423",
+                    "izdavac": "vulkan",
+                    "broj strana": 243,
+                    "godina": 2010,
+                    "cena": 800.0,
+                    "kategorija": "Decija literatura",
+                    "brisanje": false
+          },
+          {
+                    "sifra": 14,
+                    "naslov": "Pecanje",
+                    "autor": "Davor",
+                    "isbn": "124812481294",
+                    "izdavac": "F4F",
+                    "broj strana": 69,
+                    "godina": 2021,
+                    "cena": 200.0,
+                    "kategorija": "Lov i ribolov",
+                    "brisanje": false
           }
 ]

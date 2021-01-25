@@ -68,5 +68,26 @@
         "ime": "Sus",
         "prezime": "Sus",
         "tip_korisnika": "Menadzer"
+    },
+    {
+        "korisnicko_ime": "Bobe",
+        "lozinka": "Bobe",
+        "ime": "Stefan",
+        "prezime": "Bobic",
+        "tip_korisnika": "Prodavac"
+    },
+    {
+        "korisnicko_ime": "jana",
+        "lozinka": "jana",
+        "ime": "jana",
+        "prezime": "jana",
+        "tip_korisnika": "Prodavac"
+    },
+    {
+        "korisnicko_ime": "bacstipan",
+        "lozinka": "Jaje1234",
+        "ime": "Davor",
+        "prezime": "Antunovic",
+        "tip_korisnika": "Prodavac"
     }
 ]

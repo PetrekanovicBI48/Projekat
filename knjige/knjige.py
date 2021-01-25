@@ -53,6 +53,8 @@ def pretraga_knjiga_jednakost(kljuc, vrednost):
     return filtrirane_knjige
 
 
+
+
 def pretrazi_knjige():
     print("\n1. Pretraga po sifri")
     print("2. Pretraga po naslovu")
@@ -64,7 +66,7 @@ def pretrazi_knjige():
     stavka = int(input("Izaberite stavku: "))
     knjige = []
     if stavka == 1:
-        sifra = input("Unesite sifru: ")
+        sifra = int(input("Unesite sifru: "))
         knjige = pretraga_knjiga_jednakost("sifra", sifra)
     elif stavka == 2:
         naslov = input("Unesite nalsov: ")
@@ -77,10 +79,11 @@ def pretrazi_knjige():
         knjige = pretraga_knjiga_string("autor", autor)
     elif stavka == 5:
         izdavac = input("Unesite izdavaca: ")
-        knjige = pretraga_knjiga_string("autor", izdavac)
+        knjige = pretraga_knjiga_string("izdavac", izdavac)
     elif stavka == 6:
-        cena = input("Unesite cenu: ")
-        knjige = pretraga_knjiga_jednakost("autor", cena)
+        cena = float(input("Unesite cenu: "))
+        knjige = pretraga_knjiga_jednakost("cena", cena)
+
     elif stavka == 0:
         return
     else:
@@ -139,30 +142,30 @@ def sortirane_knjige():
 
 
 def ispisi_knjige(knjige):
-    zaglavlje = f"{'sifra':<10}" \
-                f"{'naslov':<20}" \
+    zaglavlje = f"{'sifra':<8}" \
+                f"{'naslov':<25}" \
                 f"{'autor':<20}" \
                 f"{'isbn':^20}" \
                 f"{'izdavac':^20}" \
                 f"{'godina izdanja':^20}" \
                 f"{'broj strana':^20}" \
-                f"{'cena':^20}" \
-                f"{'kategorija':^20}"
+                f"{'cena':^8}" \
+                f"{'kategorija':^12}"
 
     print(zaglavlje)
     print("-" * len(zaglavlje))
 
     for knjiga in knjige:
         if knjiga['brisanje'] == False:
-            za_ispis = f"{knjiga['sifra']:<10}" \
-                       f"{knjiga['naslov']:<20}" \
+            za_ispis = f"{knjiga['sifra']:<8}" \
+                       f"{knjiga['naslov']:<25}" \
                        f"{knjiga['autor']:<20}" \
                        f"{knjiga['isbn']:^20}" \
                        f"{knjiga['izdavac']:^20}" \
                        f"{knjiga['godina']:^20}" \
                        f"{knjiga['broj strana']:^20}" \
-                       f"{knjiga['cena']:^20}" \
-                       f"{knjiga['kategorija']:^20}"
+                       f"{knjiga['cena']:^8}" \
+                       f"{knjiga['kategorija']:^12}"
             print(za_ispis)
         else:
             pass

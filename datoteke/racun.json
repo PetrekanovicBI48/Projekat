@@ -28,17 +28,39 @@
     {
         "sifra": 674,
         "prodavac": "Prodavac",
-        "datum_vreme": "11.01.2021. 19:52:03",
+        "datum_vreme": "18.01.2021. 16:45:46",
         "artikli": [
             {
-                "sifra": 2,
-                "naslov": "Dervis i smrt",
-                "autor": "Mesa Selimovic",
-                "isbn": "8493927482",
+                "sifra": 14,
+                "naslov": "Mladi samuraj",
+                "autor": "Bredford Kris",
+                "isbn": "528594105",
                 "izdavac": "Vulkan",
-                "broj strana": "323",
-                "godina": 2019,
-                "cena": 1550.0,
+                "broj strana": 186,
+                "godina": 2009,
+                "cena": 650.0,
+                "kategorija": "Decija literatura",
+                "brisanje": false,
+                "kolicina": "2"
+            }
+        ],
+        "akcije": [],
+        "cena": 1300.0
+    },
+    {
+        "sifra": 675,
+        "prodavac": "bacstipan",
+        "datum_vreme": "25.01.2021. 13:11:31",
+        "artikli": [
+            {
+                "sifra": 99,
+                "naslov": "Nikoto",
+                "autor": "Strahinja Svorcan",
+                "isbn": "1274174124",
+                "izdavac": "WSHH",
+                "broj strana": 400,
+                "godina": 2021,
+                "cena": 5000.0,
                 "kategorija": "Roman",
                 "brisanje": false,
                 "kolicina": "1"
@@ -46,26 +68,61 @@
         ],
         "akcije": [
             {
-                "sifra": 1111,
+                "sifra": 1112,
                 "artikli": [
                     {
-                        "sifra": 5,
-                        "naslov": "Proces",
-                        "autor": "Kafka",
-                        "isbn": "22332233",
-                        "izdavac": "Vulkan",
-                        "broj strana": 130,
-                        "godina": 2003,
-                        "cena": 1030.0,
+                        "sifra": 99,
+                        "naslov": "Nikoto",
+                        "autor": "Strahinja Svorcan",
+                        "isbn": "1274174124",
+                        "izdavac": "WSHH",
+                        "broj strana": 400,
+                        "godina": 2021,
+                        "cena": 5000.0,
                         "kategorija": "Roman",
                         "brisanje": false,
-                        "nova cena": "2444"
+                        "nova cena": 2500.0
+                    },
+                    {
+                        "sifra": 14,
+                        "naslov": "Mladi samuraj",
+                        "autor": "Bredford Kris",
+                        "isbn": "528594105",
+                        "izdavac": "Vulkan",
+                        "broj strana": 186,
+                        "godina": 2009,
+                        "cena": 650.0,
+                        "kategorija": "Decija literatura",
+                        "brisanje": false,
+                        "nova cena": 399.0
                     }
                 ],
-                "datum_vazenja": "20.02.2021",
+                "datum_vazenja": "12.6.2021",
+                "kolicina": "2"
+            }
+        ],
+        "cena": 10798.0
+    },
+    {
+        "sifra": 676,
+        "prodavac": "Davor",
+        "datum_vreme": "25.01.2021. 13:13:18",
+        "artikli": [
+            {
+                "sifra": 3,
+                "naslov": "Ana Karenjina",
+                "autor": "Tolstoj",
+                "isbn": "456372839",
+                "izdavac": "Laguna",
+                "broj strana": "213",
+                "godina": 2020,
+                "cena": 1899.1,
+                "kategorija": "Roman",
+                "brisanje": false,
                 "kolicina": "1"
             }
         ],
-        "cena": 3994.0
+        "akcije": [],
+        "cena": 1899.1
     }
 ]
