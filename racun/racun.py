@@ -181,7 +181,7 @@ def izvestaj_ukupne_akcije(recnik, recnik2):
             print(akcije[i]['sifra'], " " * 85, akcije[i]['datum_vazenja'])
             for akcija in akcije:
                 for j in range(0, len(akcije[i]['artikli'])):
-                    if [akcija[artikli['naslov']]] in recnik.keys():
+                    if [akcija['naslov']] in recnik.keys():
                         za_ispis = f"{akcije[i]['artikli'][j]['naslov']:^40}" \
                                    f"{akcije[i]['artikli'][j]['cena']:^20}" \
                                    f"{akcije[i]['artikli'][j]['nova cena']:^20}"
