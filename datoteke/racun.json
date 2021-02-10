@@ -124,5 +124,62 @@
         ],
         "akcije": [],
         "cena": 1899.1
+    },
+    {
+        "sifra": 677,
+        "prodavac": "Prodavac",
+        "datum_vreme": "28.01.2021. 21:22:27",
+        "artikli": [
+            {
+                "sifra": 2,
+                "naslov": "Dervis i smrt",
+                "autor": "Mesa Selimovic",
+                "isbn": "8493927482",
+                "izdavac": "Vulkan",
+                "broj strana": "323",
+                "godina": 2019,
+                "cena": 1550.0,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "kolicina": "1"
+            }
+        ],
+        "akcije": [],
+        "cena": 1550.0
+    },
+    {
+        "sifra": 678,
+        "prodavac": "Prodavac",
+        "datum_vreme": "28.01.2021. 21:24:42",
+        "artikli": [
+            {
+                "sifra": 2,
+                "naslov": "Dervis i smrt",
+                "autor": "Mesa Selimovic",
+                "isbn": "8493927482",
+                "izdavac": "Vulkan",
+                "broj strana": "323",
+                "godina": 2019,
+                "cena": 1550.0,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "kolicina": "1"
+            },
+            {
+                "sifra": 2,
+                "naslov": "Dervis i smrt",
+                "autor": "Mesa Selimovic",
+                "isbn": "8493927482",
+                "izdavac": "Vulkan",
+                "broj strana": "323",
+                "godina": 2019,
+                "cena": 1550.0,
+                "kategorija": "Roman",
+                "brisanje": false,
+                "kolicina": "1"
+            }
+        ],
+        "akcije": [],
+        "cena": 1550.0
     }
 ]

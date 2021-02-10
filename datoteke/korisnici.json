@@ -89,5 +89,12 @@
         "ime": "Davor",
         "prezime": "Antunovic",
         "tip_korisnika": "Prodavac"
+    },
+    {
+        "korisnicko_ime": "Teodor",
+        "lozinka": "Teodor",
+        "ime": "Teodor",
+        "prezime": "Ilovac",
+        "tip_korisnika": "Prodavac"
     }
 ]
